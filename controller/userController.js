@@ -1,3 +1,5 @@
+const { database } = require("../database");
+
 const userModel = require("../models/userModel").userModel;
 
 const getUserByEmailIdAndPassword = (email, password) => {
@@ -23,5 +25,5 @@ function isUserValid(user, password) {
 
 module.exports = {
   getUserByEmailIdAndPassword,
-  getUserById,
+  getUserById
 };
