@@ -2,6 +2,7 @@ let database = require("../database");
 
 let remindersController = {
   list: (req, res) => {
+    // res.render("reminder/index", { reminders: database.cindy.reminders });
     res.render("reminder/index", { reminders: database.cindy.reminders });
   },
 
@@ -42,10 +43,21 @@ let remindersController = {
 
   update: (req, res) => {
     // implement this code
+    let formData = req.body
+    let reminderToFind = req.params.id - 1;
+    database.cindy.reminders[reminderToFind].title = formData.title;
+    database.cindy.reminders[reminderToFind].description = formData.description;
+    database.cindy.reminders[reminderToFind].completed = formData.completed;
+    console.log(database.cindy.reminders)
+    res.redirect("/reminders");
   },
 
   delete: (req, res) => {
     // Implement this code
+    let reminderToFind = req.params.id - 1;
+    database.cindy.reminders.pop(reminderToFind)
+    console.log(database.cindy.reminders[reminderToFind])
+    res.redirect("/reminders");
   },
 };
 
