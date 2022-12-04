@@ -1,16 +1,11 @@
 const express = require("express");
-const app = express();
 const path = require("path");
 const ejsLayouts = require("express-ejs-layouts");
 const session = require("express-session");
-const reminderController = require("./controller/reminder_controller");
-const authController = require("./controller/auth_controller");
+
+const app = express();
 
 app.use(express.static(path.join(__dirname, "public")));
-
-app.use(express.urlencoded({ extended: false })); // req.body will be undefined if not using this command line
-
-app.use(ejsLayouts);
 
 app.set("view engine", "ejs");
 
@@ -33,6 +28,8 @@ const authRoute = require("./routes/authRoute");
 const indexRoute = require("./routes/indexRoute");
 
 // Middleware for express
+app.use(ejsLayouts);
+app.use(express.urlencoded({ extended: false })); // req.body will be undefined if not using this command line
 app.use(passport.initialize());
 app.use(passport.session());
 // Here will send the request to the server from your local database

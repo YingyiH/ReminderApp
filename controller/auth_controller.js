@@ -13,13 +13,19 @@ let authController = {
 
   loginSubmit: (req, res) => {
     // implement
-    const email = req.body.email
-    const password = req.body.password
     passport.authenticate("local", {
-      successRedirect: "/reminder/index",
+      successRedirect: "/reminders",
       failureRedirect: "/auth/login",
     })
+    let formData = req.body
+    let variafy = userModel.findOne(formData.email);
+    console.log(variafy.reminders)
   },
+
+  // loginInfo: (req, res) => {
+  //   const email = req.body.email
+  //   const password = req.body.password
+  // },
 
   registerSubmit: (req, res) => {
     // implement
@@ -28,14 +34,14 @@ let authController = {
     // to find if the user has already been added
     let variafy = userModel.findOne(formData.email);
     if (variafy === null){
-      let userInfo = {
+      let user = {
         id: Object.keys(database).length + 1,
-        name: "",
+        name: formData.email.split("@")[0],
         email: formData.email,
         password: formData.password,
         reminders: []
       }
-      database.push(userInfo)
+      database.push(user)
       res.redirect("/");
     } else {
       res.send("<p>This user exists. Please log in instead.</p>")

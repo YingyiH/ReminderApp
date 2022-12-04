@@ -11,29 +11,9 @@ router.get("/login", forwardAuthenticated, authController.login);
 
 router.get("/register", forwardAuthenticated, authController.register)
 
-router.post("/login", forwardAuthenticated, authController.loginSubmit);
+router.post("/login/userlogin",  authController.loginSubmit);
+// router.post("/login/userlogin",  authController.loginInfo);
 
 router.post("/register/addUser", forwardAuthenticated, authController.registerSubmit);
-
-// router.post("/register/addUser", addUser.register);
-
-// router.post("/login",
-//   passport.authenticate("local", {
-//     successRedirect: "/reminder/index",
-//     failureRedirect: "/auth/login",
-//   })
-// );
-
-// router.post("/login",(req,res) =>{
-//   const email = req.body.email
-//   const password = req.body.password
-// })
-
-router.get("/logout", (req, res) => {
-  req.logout();
-  res.redirect("/auth/login");
-});
-
-
 
 module.exports = router;

@@ -2,11 +2,6 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const userController = require("../controller/userController");
 
-// {email: ...,
-// password: ...
-//}
-// default: email will be undefined,because:
-// It actually is:
 const localLogin = new LocalStrategy(
   {
     usernameField: "email",
