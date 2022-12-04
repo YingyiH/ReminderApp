@@ -11,7 +11,16 @@ router.get("/login", forwardAuthenticated, authController.login);
 
 router.get("/register", forwardAuthenticated, authController.register)
 
-router.post("/login/userlogin",  authController.loginSubmit);
+// router.post("/login/userlogin",  authController.loginSubmit);
+
+router.post(
+    "/login/userlogin",
+    passport.authenticate("local", {
+        successRedirect: "/reminders",
+        failureRedirect: "/auth/login",
+    })
+)
+
 // router.post("/login/userlogin",  authController.loginInfo);
 
 router.post("/register/addUser", forwardAuthenticated, authController.registerSubmit);
