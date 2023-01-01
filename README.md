@@ -5,7 +5,7 @@ A reminder web app project
   Yingyi He
 
 ## Description
-This is a project of a reminder web app with these functions:
+This is a project of a reminder web app to practice full-stack development. It remains these functions:
   - Sign up with username and password
   - Log in with username and password
   - Create a reminder
