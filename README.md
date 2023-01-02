@@ -23,4 +23,4 @@ This is a project of a reminder web app to practice full-stack development skill
   - JavaScript Express
   - Node.js
   - CSS
-  - HTML
+  - EJS
