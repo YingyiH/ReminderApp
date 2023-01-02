@@ -13,23 +13,23 @@ let Database = [
     name: "Jimmy Smith",
     email: "jimmy123@gmail.com",
     password: "jimmy123!",
-    reminders: [{ id: 1, title: "its jim", description: "abcabc", completed: false }],
+    reminders: [{ id: 1, title: "Credit Card", description: "Remember to take the credit card in that bank.", completed: true }],
     },
 
     {
     id: 2,
-    name: "cindy",
-    email: "cindy123@gmail.com",
-    password: "cindy123!",
-    reminders: [{ id: 1, title: "I am cindy", description: "abcabc", completed: false }],
+    name: "Dori",
+    email: "dori@gmail.com",
+    password: "dori123!",
+    reminders: [{ id: 1, title: "Yingyi's Birthday", description: "Buy gift for Yingyi", completed: false }],
     },
 
     {
     id: 3,
-    name: "alex",
-    email: "alex123@gmail.com",
-    password: "alex123!",
-    reminders: [{ id: 1, title: "I am Alex", description: "abcabc", completed: false }]
+    name: "Yingyi",
+    email: "Yingyi@gmail.com",
+    password: "yingyi123!",
+    reminders: [{ id: 1, title: "My Birthday", description: "Wake up at 7:00 am.", completed: false }]
     }
 ]
 

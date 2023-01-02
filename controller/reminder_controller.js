@@ -55,7 +55,7 @@ let remindersController = {
 
   delete: (req, res) => {
     // Implement this code
-    let reminderToFind = req.params.id - 1;
+    let reminderToFind = req.params.id;
     req.user.reminders.pop(reminderToFind)
     console.log(req.user.reminders[reminderToFind])
     res.redirect("/reminders");

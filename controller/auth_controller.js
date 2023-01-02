@@ -11,22 +11,6 @@ let authController = {
     res.render("auth/register");
   },
 
-  // loginSubmit: () => {
-  //   // implement
-  //   passport.authenticate("local", {
-  //     successRedirect: "/reminders",
-  //     failureRedirect: "/auth/login",
-  //   })
-    // let formData = req.body
-    // let variafy = userModel.findOne(formData.email);
-    // console.log(variafy.reminders)
-  // },
-
-  // loginInfo: (req, res) => {
-  //   const email = req.body.email
-  //   const password = req.body.password
-  // },
-
   registerSubmit: (req, res) => {
     // implement
     let formData = req.body
